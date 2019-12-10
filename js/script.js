@@ -30,14 +30,10 @@ function result() {
 
   minimum = document.getElementById("minimum").value;
   if(minimum) result += ",r"+minimum;
-  else result += ",r"+maximum;
 
   maximum = document.getElementById("maximum").value;
   if(maximum) {
     result += minimum ? "-" : ",r";
-    result += maximum;
-  } else {
-    result += maximum ? "-" : ",r";
     result += maximum;
   }
 

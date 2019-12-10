@@ -9,6 +9,8 @@ This is a template. You must fill in the title,
 author, and this description to match your project!
 
 ******************/
+let minimum;
+let maximum;
 
 function result() {
   let result = "https://rateyourmusic.com/";
@@ -26,10 +28,10 @@ function result() {
   let rows = document.getElementById("rows").value;
   if(rows) result += ","+rows;
 
-  let minimum = document.getElementById("minimum").value;
+  minimum = document.getElementById("minimum").value;
   if(minimum) result += ",r"+minimum;
 
-  let maximum = document.getElementById("maximum").value;
+  maximum = document.getElementById("maximum").value;
   if(maximum) {
     result += minimum ? "-" : ",r";
     result += maximum;
@@ -64,7 +66,7 @@ function result() {
  */
 
 function minimum() {
-  
+
 }
 
 function maximum() {

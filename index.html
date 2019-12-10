@@ -23,171 +23,171 @@
        <fieldset onchange="changed()">
           <legend>Input</legend>
           <p>
-             <label>Username: </label>
-               <input id = "usernames" type="text">
+            <label>Username: </label>
+            <input id="username" type="text">
           </p>
           <p>
-             <label>Collections: </label>
-             <select id = "collections">
-               <option value = "0"></option>
-               <option value = "1">collection</option>
-               <option value = "2">collection_t</option>
-               <option value = "3">film_collection</option>
-               <option value = "4">film_collection_t</option>
+             <label>Collection: </label>
+             <select id="collection">
+               <option value=""></option>
+               <option value="collection">collection</option>
+               <option value="collection_t">collection_t</option>
+               <option value="film_collection">film_collection</option>
+               <option value="film_collection_t">film_collection_t</option>
              </select>
           </p>
           <p>
-             <label>Modes: </label>
-             <select id = "modes">
-               <option value = "0"></option>
-               <option value = "1">visual</option>
-               <option value = "2">tracks</option>
-               <option value = "3">reviews</option>
-               <option value = "4">tracks_ratings</option>
+             <label>Mode: </label>
+             <select id="mode">
+               <option value=""></option>
+               <option value="visual">visual</option>
+               <option value="tracks">tracks</option>
+               <option value="reviews">reviews</option>
+               <option value="tracks_ratings">tracks_ratings</option>
              </select>
           </p>
           <p>
              <label>Rows: </label>
-             <select id = "rows">
-               <option value = "0"></option>
-               <option value = "1">a</option>
-               <option value = "2">al</option>
-               <option value = "3">albj</option>
-               <option value = "4">alh</option>
-               <option value = "5">albjh</option>
-               <option value = "6">aat</option>
-               <option value = "7">ts</option>
-               <option value = "8">tn</option>
-               <option value = "9">o</option>
-               <option value = "10">g</option>
-               <option value = "11">tl</option>
-               <option value = "12">v</option>
-               <option value = "13">r</option>
-               <option value = "14">q</option>
-               <option value = "15">n</option>
-               <option value = "16">p</option>
-               <option value = "17">u</option>
-               <option value = "18">c</option>
-               <option value = "19">f</option>
+             <select id="rows">
+               <option value=""></option>
+               <option value="a">a</option>
+               <option value="al">al</option>
+               <option value="albj">albj</option>
+               <option value="alh">alh</option>
+               <option value="albjh">albjh</option>
+               <option value="aat">aat</option>
+               <option value="ts">ts</option>
+               <option value="tn">tn</option>
+               <option value="o">o</option>
+               <option value="g">g</option>
+               <option value="tl">tl</option>
+               <option value="v">v</option>
+               <option value="r">r</option>
+               <option value="q">q</option>
+               <option value="n">n</option>
+               <option value="p">p</option>
+               <option value="u">u</option>
+               <option value="c">c</option>
+               <option value="f">f</option>
              </select>
           </p>
           <p>
              <label>Minimum: </label>
-             <select id = "minimums">
-               <option value = "0"></option>
-               <option value = "1">r0.0</option>
-               <option value = "2">r0.5</option>
-               <option value = "3">r1.0</option>
-               <option value = "4">r1.5</option>
-               <option value = "5">r2.0</option>
-               <option value = "6">r2.5</option>
-               <option value = "7">r3.0</option>
-               <option value = "8">r3.5</option>
-               <option value = "9">r4.0</option>
-               <option value = "10">r4.5</option>
-               <option value = "11">r5.0</option>
+             <select id="minimum" onchange="minimum()">
+               <option value=""></option>
+               <option value="0.0">0.0</option>
+               <option value="0.5">0.5</option>
+               <option value="1.0">1.0</option>
+               <option value="1.5">1.5</option>
+               <option value="2.0">2.0</option>
+               <option value="2.5">2.5</option>
+               <option value="3.0">3.0</option>
+               <option value="3.5">3.5</option>
+               <option value="4.0">4.0</option>
+               <option value="4.5">4.5</option>
+               <option value="5.0">5.0</option>
              </select>
           </p>
           <p>
              <label>Maximum: </label>
-             <select id = "maximums">
-               <option value = "0"></option>
-               <option value = "1">5.0</option>
-               <option value = "2">4.5</option>
-               <option value = "3">4.0</option>
-               <option value = "4">3.5</option>
-               <option value = "5">3.0</option>
-               <option value = "6">2.5</option>
-               <option value = "7">2.0</option>
-               <option value = "8">1.5</option>
-               <option value = "9">1.0</option>
-               <option value = "10">0.5</option>
-               <option value = "11">0.0</option>
+             <select id="maximum" onchange="maximum()"
+               <option value=""></option>
+               <option value="5.0">5.0</option>
+               <option value="4.5">4.5</option>
+               <option value="4.0">4.0</option>
+               <option value="3.5">3.5</option>
+               <option value="3.0">3.0</option>
+               <option value="2.5">2.5</option>
+               <option value="2.0">2.0</option>
+               <option value="1.5">1.5</option>
+               <option value="1.0">1.0</option>
+               <option value="0.5">0.5</option>
+               <option value="0.0">0.0</option>
              </select>
           </p>
           <p>
              <label>Formats: </label>
-             <select id = "formats">
-               <option value = "0"></option>
-               <option value = "1">CD</option>
-               <option value = "2">LP</option>
-               <option value = "3">Cassette</option>
-               <option value = "4">Minidisc</option>
-               <option value = "5">MP3</option>
-               <option value = "6">DVD-A</option>
-               <option value = "7">SACD</option>
-               <option value = "8">Multiple</option>
-               <option value = "9">8-Track</option>
-               <option value = "10">CD-R</option>
-               <option value = "11">Other</option>
-               <option value = "12">DVD</option>
-               <option value = "13">VHS</option>
+             <select id="format">
+               <option value=""></option>
+               <option value="CD">CD</option>
+               <option value="LP">LP</option>
+               <option value="Cassette">Cassette</option>
+               <option value="Minidisc">Minidisc</option>
+               <option value="MP3">MP3</option>
+               <option value="DVD-A">DVD-A</option>
+               <option value="SACD">SACD</option>
+               <option value="Multiple">Multiple</option>
+               <option value="8-Track">8-Track</option>
+               <option value="CD-R">CD-R</option>
+               <option value="Other">Other</option>
+               <option value="DVD">DVD</option>
+               <option value="VHS">VHS</option>
              </select>
           </p>
           <p>
              <label>Type: </label>
-             <select id = "types">
-               <option value = "0"></option>
-               <option value = "1">s</option>
-               <option value = "2">e</option>
-               <option value = "3">i</option>
-               <option value = "4">c</option>
-               <option value = "5">b</option>
-               <option value = "6">d</option>
+             <select id="type">
+               <option value=""></option>
+               <option value="s">s</option>
+               <option value="e">e</option>
+               <option value="i">i</option>
+               <option value="c">c</option>
+               <option value="b">b</option>
+               <option value="d">d</option>
              </select>
           </p>
           <p>
              <label>Sort: </label>
-             <select id = "sorts">
-               <option value = "0"></option>
-               <option value = "1">a</option>
-               <option value = "2">l</option>
-               <option value = "3">e</option>
-               <option value = "4">t</option>
-               <option value = "5">r</option>
-               <option value = "6">o</option>
-               <option value = "7">d</option>
-               <option value = "8">p</option>
-               <option value = "9">c</option>
-               <option value = "10">f</option>
+             <select id="sort">
+               <option value=""></option>
+               <option value="a">a</option>
+               <option value="l">l</option>
+               <option value="e">e</option>
+               <option value="t">t</option>
+               <option value="r">r</option>
+               <option value="o">o</option>
+               <option value="d">d</option>
+               <option value="p">p</option>
+               <option value="c">c</option>
+               <option value="f">f</option>
              </select>
           </p>
           <p>
              <label>Length: </label>
-             <input id = "lengths" type="text">
+             <input id="length" type="number">
           </p>
           <p>
              <label>Ownership: </label>
-             <select id = "ownerships">
-               <option value = "0"></option>
-               <option value = "1">o</option>
-               <option value = "2">w</option>
-               <option value = "3">u</option>
-               <option value = "4">n</option>
+             <select id="ownership">
+               <option value=""></option>
+               <option value="o">o</option>
+               <option value="w">Wishlist</option>
+               <option value="u">u</option>
+               <option value="n">n</option>
              </select>
           </p>
           <p>
              <label>Filter: </label>
-             <select id = "filters">
-               <option value = "0"></option>
-               <option value = "1">tag</option>
-               <option value = "2">trm_a</option>
-               <option value = "3">trm_l</option>
-               <option value = "4">trm_q</option>
-               <option value = "5">trm_b</option>
-               <option value = "6">trm_h</option>
-               <option value = "7">trm_relyear</option>
+             <select id="filter">
+               <option value=""></option>
+               <option value="tag_g">Tag</option>
+               <option value="trm_a">trm_a</option>
+               <option value="trm_l">trm_l</option>
+               <option value="trm_q">trm_q</option>
+               <option value="trm_b">trm_b</option>
+               <option value="trm_h">Genre</option>
+               <option value="trm_relyear">Year</option>
              </select>
           </p>
           <p>
-             <label>String: </label>
-               <input id = "strings" type="text">
+            <label>Filter String: </label>
+            <input id="fstring" type="text">
           </p>
        </fieldset>
     </form>
     <fieldset>
       <legend>Output</legend>
-      <a id="result" href="" target="_blank" rel="noopener noreferrer">Customized Link</a>
+      <button id="result" onclick="result()">Customized Link</button>
     </fieldset>
     <!-- <input type="text" id="collection" autofocus placeholder="collection, collection_t, film_collection">
     <input type="text" id="mode" autofocus placeholder="visual, tracks, reviews, tracks_ratings">

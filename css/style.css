@@ -27,3 +27,7 @@ input {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+input[type=number] {
+  width: 50px;
+}

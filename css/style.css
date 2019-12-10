@@ -1,0 +1,29 @@
+/*********************************************
+
+Here is a description of any special CSS used.
+In this case it's just padding and margin to 0
+so the canvas is flush with the top left corner.
+
+**********************************************/
+
+body {
+  padding: 0px 0px;
+  margin: 0px 0px;
+  /* background-color: rgb(50,50,50); */
+  font-family: monospace;
+  user-select: none;
+}
+/*
+#text_input {
+  background-color: rgba(0,0,0,0);
+  color: rgb(220,220,220);
+  overflow: scroll;
+} */
+
+input {
+  font-family: monospace;
+  user-select: contain;
+  margin: 0px 5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

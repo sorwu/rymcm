@@ -29,11 +29,15 @@ function result() {
   if(rows) result += ","+rows;
 
   minimum = document.getElementById("minimum").value;
-  if(minimum) result += ",r"+minimum;
+  if(minimum > maximum) result += ",r"+minimum;
+  else result += ",r"+maximum;
 
   maximum = document.getElementById("maximum").value;
-  if(maximum) {
+  if(maximum < minimum) {
     result += minimum ? "-" : ",r";
+    result += maximum;
+  } else {
+    result += maximum ? "-" : ",r";
     result += maximum;
   }
 

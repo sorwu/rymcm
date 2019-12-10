@@ -17,11 +17,11 @@ function result() {
   if(collection) result += collection+"/";
 
   let username = document.getElementById("username").value;
-  if(username) result += username;
-  else result += "dyslexicstoner";
+  if(username) result += username+"/";
+  else result += "dyslexicstoner/";
 
   let mode = document.getElementById("mode").value;
-  if(mode) result += "/"+mode;
+  if(mode) result += mode;
 
   let rows = document.getElementById("rows").value;
   if(rows) result += ","+rows;

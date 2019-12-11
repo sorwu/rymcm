@@ -15,93 +15,92 @@
     <!-- My script(s) -->
     <script src="js/script.js"></script>
 
-    <title>RateYourMusic.Com Custom Links Generator</title>
+    <title>RYM Collection Manager</title>
   </head>
 
   <body>
     <form>
-       <fieldset onchange="changed()">
-          <legend>Input</legend>
+       <fieldset>
+          <legend>Rate Your Music Collection Manager</legend>
           <p>
             <label>Username: </label>
-            <input id="username" type="text">
+            <input value="dyslexicstoner" id="username" type="text">
           </p>
           <p>
              <label>Collection: </label>
              <select id="collection">
-               <option value="collection">collection</option>
-               <option value="collection_t">collection_t</option>
-               <option value="film_collection">film_collection</option>
-               <option value="film_collection_t">film_collection_t</option>
+               <option value="collection">Music</option>
+               <option value="collection_t">Tagging Music</option>
+               <option value="film_collection">Films</option>
+               <option value="film_collection_t">Tagging Films</option>
              </select>
           </p>
           <p>
              <label>Mode: </label>
              <select id="mode">
                <option value=""></option>
-               <option value="visual">visual</option>
-               <option value="tracks">tracks</option>
-               <option value="reviews">reviews</option>
-               <option value="tracks_ratings">tracks_ratings</option>
+               <option value="visual">Visualualized</option>
+               <option value="tracks">Track listings</option>
+               <option value="reviews">Reviews</option>
+               <option value="tracks_ratings">Track ratings</option>
              </select>
           </p>
           <p>
              <label>Rows: </label>
              <select id="rows">
                <option value=""></option>
-               <option value="a">a</option>
-               <option value="al">al</option>
-               <option value="albj">albj</option>
-               <option value="alh">alh</option>
-               <option value="albjh">albjh</option>
-               <option value="aat">aat</option>
-               <option value="ts">ts</option>
-               <option value="tn">tn</option>
-               <option value="o">o</option>
-               <option value="g">g</option>
-               <option value="tl">tl</option>
-               <option value="v">v</option>
-               <option value="r">r</option>
-               <option value="q">q</option>
-               <option value="n">n</option>
-               <option value="p">p</option>
-               <option value="u">u</option>
-               <option value="c">c</option>
-               <option value="f">f</option>
+               <option value="a">Artist</option>
+               <option value="l">Release</option>
+               <option value="al">Artist / release year</option>
+               <option value="albj">Artist / release year / label</option>
+               <option value="alh">Artist / release year / genre</option>
+               <option value="albjh">Artist / release year / label / genre</option>
+               <option value="aat">Cover</option>
+               <option value="ts">Star rating</option>
+               <option value="tn">Number rating</option>
+               <option value="o">Ownership / format</option>
+               <option value="g">Tags</option>
+               <option value="tl">Track list</option>
+               <option value="v">Review</option>
+               <option value="r">Date entered</option>
+               <option value="q">Date aquired</option>
+               <option value="n">Number of copies</option>
+               <option value="p">Price</option>
+               <option value="u">Username</option>
+               <option value="c">Column number</option>
+               <option value="f">Film title</option>
              </select>
           </p>
           <p>
              <label>Minimum: </label>
-             <select id="minimum" onchange="minimum()">
+             <select id="minimum">
                <option value=""></option>
-               <option value="0.0">0.0</option>
-               <option value="0.5">0.5</option>
-               <option value="1.0">1.0</option>
+               <option value="0.0">Unrated</option>
+               <option value="0.5">.5</option>
+               <option value="1.0">1</option>
                <option value="1.5">1.5</option>
-               <option value="2.0">2.0</option>
+               <option value="2.0">2</option>
                <option value="2.5">2.5</option>
-               <option value="3.0">3.0</option>
+               <option value="3.0">3</option>
                <option value="3.5">3.5</option>
-               <option value="4.0">4.0</option>
+               <option value="4.0">4</option>
                <option value="4.5">4.5</option>
-               <option value="5.0">5.0</option>
+               <option value="5.0">5</option>
              </select>
-          </p>
-          <p>
              <label>Maximum: </label>
-             <select id="maximum" onchange="maximum()"
+             <select id="maximum">
                <option value=""></option>
-               <option value="5.0">5.0</option>
-               <option value="4.5">4.5</option>
-               <option value="4.0">4.0</option>
-               <option value="3.5">3.5</option>
-               <option value="3.0">3.0</option>
-               <option value="2.5">2.5</option>
-               <option value="2.0">2.0</option>
+               <option value="0.0">Unrated</option>
+               <option value="0.5">.5</option>
+               <option value="1.0">1</option>
                <option value="1.5">1.5</option>
-               <option value="1.0">1.0</option>
-               <option value="0.5">0.5</option>
-               <option value="0.0">0.0</option>
+               <option value="2.0">2</option>
+               <option value="2.5">2.5</option>
+               <option value="3.0">3</option>
+               <option value="3.5">3.5</option>
+               <option value="4.0">4</option>
+               <option value="4.5">4.5</option>
+               <option value="5.0">5</option>
              </select>
           </p>
           <p>
@@ -127,29 +126,30 @@
              <label>Type: </label>
              <select id="type">
                <option value=""></option>
-               <option value="s">s</option>
-               <option value="e">e</option>
-               <option value="i">i</option>
-               <option value="c">c</option>
-               <option value="b">b</option>
-               <option value="d">d</option>
+               <option value="s">Album</option>
+               <option value="e">Ep</option>
+               <option value="i">Single</option>
+               <option value="c">Compilation</option>
+               <option value="b">Unauthorized / bootleg</option>
+               <option value="d">DVD</option>
              </select>
           </p>
           <p>
-             <label>Sort: </label>
+             <label>Sorting: </label>
              <select id="sort">
                <option value=""></option>
-               <option value="a">a</option>
-               <option value="l">l</option>
-               <option value="e">e</option>
-               <option value="t">t</option>
-               <option value="r">r</option>
-               <option value="o">o</option>
-               <option value="d">d</option>
-               <option value="p">p</option>
-               <option value="c">c</option>
-               <option value="f">f</option>
+               <option value="a">Artist</option>
+               <option value="l">Release title</option>
+               <option value="e">Release date</option>
+               <option value="t">Release art colour</option>
+               <option value="r">Rating</option>
+               <option value="o">Ownership / format</option>
+               <option value="d">Date entered</option>
+               <option value="p">Date aquired</option>
+               <option value="c">Price</option>
+               <option value="f">Film title</option>
              </select>
+             <input id="descending" type="checkbox"><label>(Reversed)</label>
           </p>
           <p>
              <label>Length: </label>
@@ -159,10 +159,10 @@
              <label>Ownership: </label>
              <select id="ownership">
                <option value=""></option>
-               <option value="o">o</option>
+               <option value="o">Owned</option>
                <option value="w">Wishlist</option>
-               <option value="u">u</option>
-               <option value="n">n</option>
+               <option value="u">Used to own</option>
+               <option value="n">Not owned</option>
              </select>
           </p>
           <p>
@@ -170,28 +170,23 @@
              <select id="filter">
                <option value=""></option>
                <option value="tag_g">Tag</option>
-               <option value="trm_a">trm_a</option>
-               <option value="trm_l">trm_l</option>
-               <option value="trm_q">trm_q</option>
-               <option value="trm_b">trm_b</option>
+               <option value="trm_a">Artist</option>
+               <option value="trm_l">Release title</option>
+               <option value="trm_q">Review</option>
+               <option value="trm_b">Label</option>
                <option value="trm_h">Genre</option>
-               <option value="trm_relyear">Year</option>
+               <option value="trm_relyear">Year('s)</option>
              </select>
           </p>
           <p>
             <label>Filter String: </label>
             <input id="fstring" type="text">
           </p>
+          <fieldset>
+            <button id="output" onclick="redirect()">Managed Collection</button>
+          </fieldset>
        </fieldset>
     </form>
-    <fieldset>
-      <legend>Output</legend>
-      <button id="result" onclick="result()">Customized Link</button>
-    </fieldset>
-    <!-- <input type="text" id="collection" autofocus placeholder="collection, collection_t, film_collection">
-    <input type="text" id="mode" autofocus placeholder="visual, tracks, reviews, tracks_ratings">
-    <input type="text" id="display" autofocus placeholder="a, l, al, albj, alh, albjh, aat, ts, tn, o, g, tl, v, r, q, n, p, u, c, f"> -->
-    <!-- HTML would go here if needed. -->
   </body>
 
 </html>

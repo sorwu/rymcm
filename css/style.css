@@ -9,25 +9,54 @@ so the canvas is flush with the top left corner.
 body {
   padding: 0px 0px;
   margin: 0px 0px;
-  /* background-color: rgb(50,50,50); */
   font-family: monospace;
   user-select: none;
+  background-color: #999;
 }
-/*
-#text_input {
-  background-color: rgba(0,0,0,0);
-  color: rgb(220,220,220);
-  overflow: scroll;
-} */
 
-input {
+input, select option[value], select, input {
   font-family: monospace;
   user-select: contain;
   margin: 0px 5px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: visible;
+  background-color: #bbb;
+  border: 2px solid #333;
 }
+
+button {
+  font-family: monospace;
+  user-select: contain;
+  margin: 5px 0px;
+  overflow: hidden;
+  background-color: #bbb;
+  border: 2px solid #333;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #aaa;
+  border: 2px solid #000;
+}
+
+fieldset {
+  margin: 5px 10px;
+}
+
+
+/* select option[value="1"] {
+  background: black;
+} */
 
 input[type=number] {
   width: 50px;
+}
+
+input[type=checkbox] {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border: 2px solid #333;
 }

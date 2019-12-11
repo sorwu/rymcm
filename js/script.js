@@ -9,18 +9,21 @@ This is a template. You must fill in the title,
 author, and this description to match your project!
 
 ******************/
+let result;
 let minimum;
 let maximum;
+let generating = false;
 
-function result() {
-  let result = "https://rateyourmusic.com/";
+function generateLink() {
+  result = "https://rateyourmusic.com/";
+  generating = true;
+  console.log("Generating..." + generating + " = " + result)
 
   let collection = document.getElementById("collection").value;
   if(collection) result += collection+"/";
 
   let username = document.getElementById("username").value;
   if(username) result += username+"/";
-  else result += "dyslexicstoner/";
 
   let mode = document.getElementById("mode").value;
   if(mode) result += mode;
@@ -29,10 +32,19 @@ function result() {
   if(rows) result += ","+rows;
 
   minimum = document.getElementById("minimum").value;
-  if(minimum) result += ",r"+minimum;
+  if(minimum) {
+    result += ",r"+minimum;
+    if(parseFloat(minimum)<parseFloat(maximum)) {
+    } else {
+      document.getElementById("minimum").options.item((parseFloat(maximum)-1)/2).select;
+    }
+  }
 
   maximum = document.getElementById("maximum").value;
-  if(maximum) {
+  if(maximum || parseFloat(maximum>minimum)) {
+    result += minimum ? "-" : ",r";
+    result += maximum;
+  } else {
     result += minimum ? "-" : ",r";
     result += maximum;
   }
@@ -46,6 +58,9 @@ function result() {
   let sort = document.getElementById("sort").value;
   if(sort) result += ",ss."+sort;
 
+  let descending = document.getElementById("descending").value;
+  if(descending) result += "d";
+
   let length = document.getElementById("length").value;
   if(length) result += ",n"+length;
 
@@ -58,17 +73,28 @@ function result() {
   let fstring = document.getElementById("fstring").value;
   if(fstring) result += "/"+fstring+"/";
 
-  window.location.href = result;
+  generating = false;
+}
+
+function redirect() {
+  generateLink();
+  generating = false;
+
+  if (!username) {
+    result = "";
+  } else {
+    window.open(result, "_blank");
+  }
 }
 
 /**
  * Minimum and maximum functions (will do later)
  */
-
-function minimum() {
-
-}
-
-function maximum() {
-
-}
+//
+// function minimum() {
+//
+// }
+//
+// function maximum() {
+//
+// }

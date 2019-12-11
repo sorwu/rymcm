@@ -26,62 +26,28 @@ function generateLink() {
     let mode = document.getElementById("mode").value;
     if(mode) result += mode + ",";
 
-    let collumns = document.getElementById("collumns").value;
-    if(collumns) result += "d.rp,"+collumns;
-    let collumns1 = document.getElementById("collumns1").value;
-    if(collumns1) result += ","+collumns1;
-    let collumns2 = document.getElementById("collumns2").value;
-    if(collumns2) result += ","+collumns2;
-    let collumns3 = document.getElementById("collumns3").value;
-    if(collumns3) result += ","+collumns3;
-    let collumns4 = document.getElementById("collumns4").value;
-    if(collumns4) result += ","+collumns4;
-    let collumns5 = document.getElementById("collumns5").value;
-    if(collumns5) result += ","+collumns5;
-
-    let minimum = document.getElementById("minimum").value;
-    if(minimum) {
-      result += ",r"+minimum;
+    let columns = document.getElementsByClassName("columns");
+    if(columns.length) {
+      result += "d.rp";
+      for(let i = 0; i < columns.length; i++) {
+        console.log(columns[i]);
+        result += ","+columns[i].value;
+      };
     }
 
-    let maximum = document.getElementById("maximum").value;
-    if(maximum) {
-      result += minimum ? "-" : ",r";
-      result += maximum;
-    }
+    result += ",r"+document.getElementById("minimum").value+"-"+document.getElementById("maximum").value;
 
-    let format = document.getElementById("format").value;
-    if(format) result += ",fmt."+format;
-    let format1 = document.getElementById("format1").value;
-    if(format1) result += "."+format1;
-    let format2 = document.getElementById("format2").value;
-    if(format2) result += "."+format2;
-    let format3 = document.getElementById("format3").value;
-    if(format3) result += "."+format3;
-    let format4 = document.getElementById("format4").value;
-    if(format4) result += "."+format4;
-    let format5 = document.getElementById("format5").value;
-    if(format5) result += "."+format5;
+    let format = document.getElementsByClassName("format");
+    if(format) result += ",fmt."+format[0];
 
     let type = document.getElementById("type").value;
     if(type) result += ",typ"+type;
 
-    let sort = document.getElementById("sort").value;
-    if(sort) result += ",ss."+sort;
-    let sort1 = document.getElementById("sort1").value;
-    if(sort1) result += "."+sort1;
-    let sort2 = document.getElementById("sort2").value;
-    if(sort2) result += "."+sort2;
-    let sort3 = document.getElementById("sort3").value;
-    if(sort3) result += "."+sort3;
-    let sort4 = document.getElementById("sort4").value;
-    if(sort4) result += "."+sort4;
-    let sort5 = document.getElementById("sort5").value;
-    if(sort5) result += "."+sort5;
+    let sort = document.getElementsByClassName("sort");
+    if(sort) result += ",ss."+sort[0];
 
-    let descending = document.getElementById("descending").checked;
-    // console.log(descending);
-    if(descending) result += "d";
+    let descending = document.getElementsByClassName("descending");
+    if(descending[0].checked) result += "d";
 
     let length = document.getElementById("length").value;
     if(length) result += ",n"+length;
@@ -99,11 +65,88 @@ function generateLink() {
 
     generating = false;
   }
-  console.log(`${generating} - ${result} ... ${storeAnswers}`);
+  //console.log(`${generating} - ${result} ... ${storeAnswers}`);
 }
 
 function managedCollection() {
   if (storeAnswers && !generating) {
     window.location.assign(storeAnswers);
   }
+}
+
+generateLink(); // Generates link on page load
+
+function addColumn() {
+  let p = document.getElementById("columnsP");
+  p.innerHTML = p.innerHTML.replace('<button onclick="addColumn()">Add</button>', "")
+  + `
+    <select class="columns">
+      <option value="a">Artist</option>
+      <option value="l">Release</option>
+      <option value="al">Artist / release year</option>
+      <option value="albj">Artist / release year / label</option>
+      <option value="alh">Artist / release year / genre</option>
+      <option value="albjh">Artist / release year / label / genre</option>
+      <option value="aat">Cover</option>
+      <option value="ts">Star rating</option>
+      <option value="tn">Number rating</option>
+      <option value="o">Ownership / format</option>
+      <option value="g">Tags</option>
+      <option value="tl">Track list</option>
+      <option value="v">Review</option>
+      <option value="r">Date entered</option>
+      <option value="q">Date aquired</option>
+      <option value="n">Number of copies</option>
+      <option value="p">Price</option>
+      <option value="u">Username</option>
+      <option value="c">Collumn number</option>
+      <option value="f">Film title</option>
+    </select>
+    <button onclick="addColumn()">Add</button>
+    `;
+}
+
+function addFormat() {
+  let p = document.getElementById("formatP");
+  p.innerHTML = p.innerHTML.replace('<button onclick="addFormat()">Add</button>', "")
+  + `
+    <select class="format">
+      <option value="">All</option>
+      <option value="CD">CD</option>
+      <option value="LP">LP</option>
+      <option value="Cassette">Cassette</option>
+      <option value="Minidisc">Minidisc</option>
+      <option value="MP3">MP3</option>
+      <option value="DVD-A">DVD-A</option>
+      <option value="SACD">SACD</option>
+      <option value="Multiple">Multiple</option>
+      <option value="8-Track">8-Track</option>
+      <option value="CD-R">CD-R</option>
+      <option value="Other">Other</option>
+      <option value="DVD">DVD</option>
+      <option value="VHS">VHS</option>
+    </select>
+    <button onclick="addFormat()">Add</button>
+    `;
+}
+
+function addSort() {
+  let p = document.getElementById("sorting");
+  p.innerHTML = p.innerHTML.replace('<button onclick="addSort()">Add</button>', "")
+  + `
+    <select class="sort">
+      <option value="a">Artist</option>
+      <option value="l">Release title</option>
+      <option value="e">Release date</option>
+      <option value="t">Release art colour</option>
+      <option value="r">Rating</option>
+      <option value="o">Ownership / format</option>
+      <option value="d">Date entered</option>
+      <option value="p">Date aquired</option>
+      <option value="c">Price</option>
+      <option value="f">Film title</option>
+    </select>
+    <input class="descending" type="checkbox"><label>(Reversed)</label>
+    <button onclick="addSort()">Add</button>
+    `;
 }

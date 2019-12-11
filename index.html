@@ -22,11 +22,11 @@
     <form>
        <fieldset>
           <legend>Rate Your Music Collection Manager</legend>
-          <p>
+          <p onchange="generateLink()">
             <label>Username: </label>
             <input value="dyslexicstoner" id="username" type="text">
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Collection: </label>
              <select id="collection">
                <option value="collection">Music</option>
@@ -35,20 +35,19 @@
                <option value="film_collection_t">Tagging Films</option>
              </select>
           </p>
-          <p>
-             <label>Mode: </label>
+          <p onchange="generateLink()">
+             <label>Rows (mode): </label>
              <select id="mode">
-               <option value=""></option>
+               <option value="">Default</option>
                <option value="visual">Visualualized</option>
                <option value="tracks">Track listings</option>
                <option value="reviews">Reviews</option>
                <option value="tracks_ratings">Track ratings</option>
              </select>
           </p>
-          <p>
-             <label>Rows: </label>
+          <p onchange="generateLink()">
+             <label>Collumns: </label>
              <select id="rows">
-               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release</option>
                <option value="al">Artist / release year</option>
@@ -67,46 +66,21 @@
                <option value="n">Number of copies</option>
                <option value="p">Price</option>
                <option value="u">Username</option>
-               <option value="c">Column number</option>
+               <option value="c">Collumn number</option>
                <option value="f">Film title</option>
              </select>
           </p>
-          <p>
-             <label>Minimum: </label>
-             <select id="minimum">
-               <option value=""></option>
-               <option value="0.0">Unrated</option>
-               <option value="0.5">.5</option>
-               <option value="1.0">1</option>
-               <option value="1.5">1.5</option>
-               <option value="2.0">2</option>
-               <option value="2.5">2.5</option>
-               <option value="3.0">3</option>
-               <option value="3.5">3.5</option>
-               <option value="4.0">4</option>
-               <option value="4.5">4.5</option>
-               <option value="5.0">5</option>
-             </select>
-             <label>Maximum: </label>
-             <select id="maximum">
-               <option value=""></option>
-               <option value="0.0">Unrated</option>
-               <option value="0.5">.5</option>
-               <option value="1.0">1</option>
-               <option value="1.5">1.5</option>
-               <option value="2.0">2</option>
-               <option value="2.5">2.5</option>
-               <option value="3.0">3</option>
-               <option value="3.5">3.5</option>
-               <option value="4.0">4</option>
-               <option value="4.5">4.5</option>
-               <option value="5.0">5</option>
-             </select>
+          <p onchange="generateLink()">
+             <label>Lowest: </label>
+             <input id="minimum" step=".5" min="0" max="5" type="number" value="0">
+             <label>Highest: </label>
+             <input id="maximum" step=".5" min=".5" max="5" type="number" value="5">
+             <label>(Rating/5, 0 = unrated)</label>
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Formats: </label>
              <select id="format">
-               <option value=""></option>
+               <option value="">All</option>
                <option value="CD">CD</option>
                <option value="LP">LP</option>
                <option value="Cassette">Cassette</option>
@@ -122,10 +96,10 @@
                <option value="VHS">VHS</option>
              </select>
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Type: </label>
              <select id="type">
-               <option value=""></option>
+               <option value="">All</option>
                <option value="s">Album</option>
                <option value="e">Ep</option>
                <option value="i">Single</option>
@@ -134,10 +108,9 @@
                <option value="d">DVD</option>
              </select>
           </p>
-          <p>
+          <p id="sorting" onchange="generateLink()">
              <label>Sorting: </label>
              <select id="sort">
-               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -151,24 +124,24 @@
              </select>
              <input id="descending" type="checkbox"><label>(Reversed)</label>
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Length: </label>
-             <input id="length" type="number">
+             <input id="length" type="number" value="25">
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Ownership: </label>
              <select id="ownership">
-               <option value=""></option>
+               <option value="">All</option>
                <option value="o">Owned</option>
                <option value="w">Wishlist</option>
                <option value="u">Used to own</option>
                <option value="n">Not owned</option>
              </select>
           </p>
-          <p>
+          <p onchange="generateLink()">
              <label>Filter: </label>
              <select id="filter">
-               <option value=""></option>
+               <option value="">None</option>
                <option value="tag_g">Tag</option>
                <option value="trm_a">Artist</option>
                <option value="trm_l">Release title</option>
@@ -178,13 +151,15 @@
                <option value="trm_relyear">Year('s)</option>
              </select>
           </p>
-          <p>
+          <p onchange="generateLink()">
             <label>Filter String: </label>
-            <input id="fstring" type="text">
+            <input id="fstring" type="text" placeholder="Search Terms">
           </p>
-          <fieldset>
-            <button id="output" onclick="redirect()">Managed Collection</button>
-          </fieldset>
+          <p onchange="generateLink()">
+            <fieldset>
+              <button id="output" onclick="resultBtn()">Managed Collection</button>
+            </fieldset>
+          </p>
        </fieldset>
     </form>
   </body>

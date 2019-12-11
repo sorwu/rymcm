@@ -54,9 +54,9 @@ input[type=number] {
 
 input[type=checkbox] {
   position: relative;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
   background-color: #ccc;
   border: 2px solid #333;
 }

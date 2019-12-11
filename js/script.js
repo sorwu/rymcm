@@ -10,8 +10,8 @@ author, and this description to match your project!
 
 ******************/
 let result;
-let minimum;
-let maximum;
+// let minimum = 0;
+// let maximum = 10;
 let generating = false;
 
 function generateLink() {
@@ -31,20 +31,15 @@ function generateLink() {
   let rows = document.getElementById("rows").value;
   if(rows) result += ","+rows;
 
-  minimum = document.getElementById("minimum").value;
+  // document.getElementById("maximum").min = document.getElementById("minimum").max
+
+  let minimum = document.getElementById("minimum").value;
   if(minimum) {
     result += ",r"+minimum;
-    if(parseFloat(minimum)<parseFloat(maximum)) {
-    } else {
-      document.getElementById("minimum").options.item((parseFloat(maximum)-1)/2).select;
-    }
   }
 
-  maximum = document.getElementById("maximum").value;
-  if(maximum || parseFloat(maximum>minimum)) {
-    result += minimum ? "-" : ",r";
-    result += maximum;
-  } else {
+  let maximum = document.getElementById("maximum").value;
+  if(maximum) {
     result += minimum ? "-" : ",r";
     result += maximum;
   }
@@ -58,7 +53,8 @@ function generateLink() {
   let sort = document.getElementById("sort").value;
   if(sort) result += ",ss."+sort;
 
-  let descending = document.getElementById("descending").value;
+  let descending = document.getElementById("descending").checked;
+  console.log(descending);
   if(descending) result += "d";
 
   let length = document.getElementById("length").value;
@@ -73,28 +69,13 @@ function generateLink() {
   let fstring = document.getElementById("fstring").value;
   if(fstring) result += "/"+fstring+"/";
 
+  // let empty = "";
+  // empty = document.getElementByTagName("select").value[0];
+
   generating = false;
 }
 
-function redirect() {
-  generateLink();
-  generating = false;
-
-  if (!username) {
-    result = "";
-  } else {
-    window.open(result, "_blank");
-  }
+function resultBtn() {
+  // window.open(result);
+  window.location.href = result;
 }
-
-/**
- * Minimum and maximum functions (will do later)
- */
-//
-// function minimum() {
-//
-// }
-//
-// function maximum() {
-//
-// }

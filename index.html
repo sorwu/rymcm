@@ -21,7 +21,7 @@
   <body>
     <form>
        <fieldset>
-          <legend>Rate Your Music Collection Manager</legend>
+          <legend id="header">Rate Your Music Collection Manager</legend>
           <p onchange="generateLink()">
             <label>Username: </label>
             <input value="dyslexicstoner" id="username" type="text">
@@ -320,6 +320,7 @@
              </select>
              <input id="descending" type="checkbox"><label>(Reversed)</label>
              <select id="sort1">
+               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -331,8 +332,9 @@
                <option value="c">Price</option>
                <option value="f">Film title</option>
              </select>
-             <input id="descending1" type="checkbox"><label>(Reversed)</label>
+             <div id="descending1"><input type="checkbox"><label>(Reversed)</label></div>
              <select id="sort2">
+               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -344,9 +346,9 @@
                <option value="c">Price</option>
                <option value="f">Film title</option>
              </select>
-             <input id="descending2" type="checkbox"><label>(Reversed)</label>
-
+             <div id="descending2"><input type="checkbox"><label>(Reversed)</label></div>
              <select id="sort3">
+               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -358,8 +360,9 @@
                <option value="c">Price</option>
                <option value="f">Film title</option>
              </select>
-             <input id="descending3" type="checkbox"><label>(Reversed)</label>
+             <div id="descending3"><input type="checkbox"><label>(Reversed)</label></div>
              <select id="sort4">
+               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -371,8 +374,9 @@
                <option value="c">Price</option>
                <option value="f">Film title</option>
              </select>
-             <input id="descending4" type="checkbox"><label>(Reversed)</label>
+             <div id="descending4"><input type="checkbox"><label>(Reversed)</label></div>
              <select id="sort5">
+               <option value=""></option>
                <option value="a">Artist</option>
                <option value="l">Release title</option>
                <option value="e">Release date</option>
@@ -384,7 +388,7 @@
                <option value="c">Price</option>
                <option value="f">Film title</option>
              </select>
-             <input id="descending5" type="checkbox"><label>(Reversed)</label>
+             <div id="descending5"><input type="checkbox"><label>(Reversed)</label></div>
           </p>
           <p onchange="generateLink()">
              <label>Length: </label>
@@ -418,7 +422,8 @@
           </p>
           <p onchange="generateLink()">
             <fieldset>
-              <button id="output" onclick="resultBtn()">Managed Collection</button>
+              <legend id="footer">RYMCM</legend>
+                <input type="button" id="output" value="Managed Collection" onclick="managedCollection();"></input>
             </fieldset>
           </p>
        </fieldset>

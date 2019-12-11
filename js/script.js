@@ -30,7 +30,6 @@ function generateLink() {
     if(columns.length) {
       result += "d.rp";
       for(let i = 0; i < columns.length; i++) {
-        console.log(columns[i]);
         result += ","+columns[i].value;
       };
     }
@@ -38,16 +37,24 @@ function generateLink() {
     result += ",r"+document.getElementById("minimum").value+"-"+document.getElementById("maximum").value;
 
     let format = document.getElementsByClassName("format");
-    if(format) result += ",fmt."+format[0];
+    if(format.length) {
+      result += ",fmt";
+      for(let i = 0; i < format.length; i++) {
+        result += "."+format[i].value;
+      };
+    }
 
     let type = document.getElementById("type").value;
     if(type) result += ",typ"+type;
 
     let sort = document.getElementsByClassName("sort");
-    if(sort) result += ",ss."+sort[0];
-
     let descending = document.getElementsByClassName("descending");
-    if(descending[0].checked) result += "d";
+    if(sort.length) {
+      result += ",ss";
+      for(let i = 0; i < sort.length; i++) {
+        result += "."+sort[i].value+(descending[i].checked?"d":"");
+      };
+    }
 
     let length = document.getElementById("length").value;
     if(length) result += ",n"+length;

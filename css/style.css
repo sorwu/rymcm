@@ -12,8 +12,8 @@ body {
   font-family: monospace;
   font-size: 13pt;
   user-select: none;
-  background-color: #aaa;
-  color: #222
+  background-color: #111;
+  color: #ccc;
 }
 
 input, select option[value], select, input {
@@ -22,8 +22,13 @@ input, select option[value], select, input {
   margin: 5px 5px;
   overflow-x: hidden;
   overflow-y: visible;
-  background-color: #ccc;
-  border: 2px solid #333;
+  background-color: #555;
+  border: 2px solid #777;
+  color: #ddd;
+}
+
+select {
+  margin-top: 10px;
 }
 
 input[type=button] {
@@ -31,25 +36,19 @@ input[type=button] {
   user-select: contain;
   margin: 5px 0px;
   overflow: hidden;
-  background-color: #bbb;
-  border: 2px solid #333;
+  background-color: #555;
+  border: 2px solid #777;
 }
-
 
 input[type=button]:hover {
   cursor: pointer;
-  background-color: #aaa;
-  border: 2px solid #000;
+  background-color: #333;
+  border: 2px solid #999;
 }
 
 fieldset {
   margin: 5px 10px;
 }
-
-
-/* select option[value="1"] {
-  background: black;
-} */
 
 input[type=number] {
   width: 50px;
@@ -60,8 +59,6 @@ input[type=checkbox] {
   top: 8px;
   width: 24px;
   height: 24px;
-  background-color: #ccc;
-  border: 2px solid #333;
 }
 
 legend#header {
@@ -74,6 +71,6 @@ legend#header {
 }
 
 legend#footer {
-  color: #555;
+  color: #bbb;
   font-size: 15pt;
 }

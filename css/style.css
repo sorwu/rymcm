@@ -69,7 +69,7 @@ legend#header {
   font-size: 20pt;
 }
 
-#collumns1, #collumns2, #collumns3, #collumns4, #collumns5, #format1, #format2, #format3, #format4, #format5, #sort1, #sort2, #sort3, #sort4, #sort5, #descending1, #descending2, #descending3, #descending4, #descending5 {
+.columns, .format, .sort, .descending {
   display: inline;
 }
 

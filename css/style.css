@@ -10,17 +10,19 @@ body {
   padding: 0px 0px;
   margin: 0px 0px;
   font-family: monospace;
+  font-size: 13pt;
   user-select: none;
-  background-color: #999;
+  background-color: #aaa;
+  color: #222
 }
 
 input, select option[value], select, input {
   font-family: monospace;
   user-select: contain;
-  margin: 0px 5px;
+  margin: 5px 5px;
   overflow-x: hidden;
   overflow-y: visible;
-  background-color: #bbb;
+  background-color: #ccc;
   border: 2px solid #333;
 }
 
@@ -59,4 +61,13 @@ input[type=checkbox] {
   height: 24px;
   background-color: #ccc;
   border: 2px solid #333;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+#collumns1, #collumns2, #collumns3, #collumns4, #collumns5 {
+  display: none;
 }

@@ -2,11 +2,10 @@
 
 /*****************
 
-Title of Project
-Author Name
+Rate Your Music Collection Manager
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+~dyslexicstoner
+contibutions: ~GiraffeKey
 
 ******************/
 let generating = false;
